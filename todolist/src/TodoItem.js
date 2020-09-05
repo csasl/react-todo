@@ -10,7 +10,7 @@ class TodoItem extends Component{
     }
 
     handleRemove() {
-
+        this.props.removeTodo(this.props.id);
     }
 
     render() {
