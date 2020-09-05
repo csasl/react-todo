@@ -9,14 +9,30 @@ class TodoItem extends Component{
         }
         this.handleRemove = this.handleRemove.bind(this);
         this.handleEditRequest = this.handleEditRequest.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleRemove() {
+        //call remove in parent component
         this.props.removeTodo(this.props.id);
     }
 
     handleEditRequest(){
+        //toggle editing state
         this.setState({editing: !this.state.editing});
+    }
+
+    handleUpdate(evt){
+        evt.preventDefault();
+        //call edit function in parent component
+        this.props.editTodo(this.state.task, this.props.id);
+        //reset editing state
+        this.setState({editing: false});
+    }
+
+    handleChange(evt){
+        this.setState({[evt.target.name]: evt.target.value });
     }
 
 
@@ -25,8 +41,11 @@ class TodoItem extends Component{
         if(this.state.editing){
             return (
                 <div>
-                    <form>
-                        <input type="text" value={this.state.task} name="task"/>
+                    <form onSubmit={this.handleUpdate}>
+                        <input type="text" 
+                        value={this.state.task} 
+                        name="task"
+                        onChange={this.handleChange}/>
                         <button>Save</button>
                     </form>
                 </div>

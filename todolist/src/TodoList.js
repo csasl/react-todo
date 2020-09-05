@@ -10,21 +10,39 @@ class TodoList extends Component{
         };
         this.create = this.create.bind(this);
         this.remove = this.remove.bind(this);
+        this.edit = this.edit.bind(this);
     }
 
     create(todo){
+        //add new todo to todos
         this.setState({todos: [...this.state.todos, todo]});
     }
 
     remove(id){
+        //find by id and remove
         this.setState({
             todos: this.state.todos.filter(todo => todo.id !== id)
         });
     }
 
+    edit(updatedTask, id){
+        //find todo by id and update task if found
+       const updatedTodos = this.state.todos.map(todo=>{
+           if(todo.id === id){
+               return {...todo, task:updatedTask}
+           }
+           return todo;
+       });
+       this.setState({todos: updatedTodos});
+    }
+
     render(){
+        //show list of TodoItems
         const todos = this.state.todos.map(todo=> {
-            return<TodoItem task= {todo.task} id={todo.id} removeTodo={this.remove}/>
+            return<TodoItem task= {todo.task} 
+                            id={todo.id} 
+                            removeTodo={this.remove}
+                            editTodo = {this.edit}/>
         });
 
         return(
