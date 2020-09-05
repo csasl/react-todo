@@ -9,10 +9,15 @@ class TodoList extends Component{
             todos: [{task: "water plants"}, {task: "finish homework"}]
         };
         this.create = this.create.bind(this);
+        this.remove = this.remove.bind(this);
     }
 
     create(todo){
         this.setState({todos: [...this.state.todos, todo]});
+    }
+
+    remove(todo){
+        
     }
 
     render(){

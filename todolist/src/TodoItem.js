@@ -6,13 +6,20 @@ class TodoItem extends Component{
         this.state={
             task: this.props.task
         }
+        this.handleRemove = this.handleRemove.bind(this);
     }
+
+    handleRemove() {
+
+    }
+
     render() {
         return(
         <div>
             <li>{this.props.task}</li>
+            <button onClick={this.handleRemove}>Remove</button>
         </div> 
-        )
+        );
       
     }
 }
