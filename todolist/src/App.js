@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import TodoItem from './TodoItem';
 
 class App extends Component{
   render(){
-    return;
+    return(
+      <div>
+         <TodoItem/>
+      </div>
+    );
+     
   }
 }
 
