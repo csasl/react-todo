@@ -6,7 +6,7 @@ class TodoList extends Component{
     constructor(props){
         super(props);
         this.state={
-            todos: []
+            todos: [],
         };
         this.create = this.create.bind(this);
         this.remove = this.remove.bind(this);

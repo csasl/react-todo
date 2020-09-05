@@ -17,7 +17,8 @@ class NewTodoForm extends Component{
 
     handleSubmit(evt){
         evt.preventDefault();
-        this.props.createTodo({...this.state, id:uuidv4()});
+        this.props.createTodo({...this.state, id:uuidv4()}); //call function in parent component
+        this.setState({task: ""}); //reset form
     }
 
     render(){
