@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
 class TodoItem extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            task: this.props.task
+        }
+    }
     render() {
         return(
         <div>
-            <h2>This is a todo item</h2>
+            <li>{this.props.task}</li>
         </div> 
         )
       
