@@ -9,8 +9,8 @@ class NewTodoForm extends Component{
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(){
-
+    handleChange(evt){
+        this.setState({[evt.target.name]: evt.target.value});
     }
 
     render(){
