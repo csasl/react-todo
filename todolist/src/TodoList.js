@@ -36,13 +36,16 @@ class TodoList extends Component{
        this.setState({todos: updatedTodos});
     }
 
+    
+
     render(){
         //show list of TodoItems
         const todos = this.state.todos.map(todo=> {
             return<TodoItem task= {todo.task} 
                             id={todo.id} 
                             removeTodo={this.remove}
-                            editTodo = {this.edit}/>
+                            editTodo = {this.edit}
+                            />
         });
 
         return(
