@@ -44,6 +44,7 @@ class TodoList extends Component{
         const todos = this.state.todos.map(todo=> {
             return<TodoItem task= {todo.task} 
                             id={todo.id} 
+                            key={todo.id}
                             removeTodo={this.remove}
                             editTodo = {this.edit}
                             />

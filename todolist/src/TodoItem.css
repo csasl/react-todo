@@ -16,6 +16,33 @@
 .TodoItem complete {
     opacity: 0.6;
 }
+
+.Todo-edit-form input{
+    flex-grow: 1;
+    border: none;
+    background: #f7f1f1;
+    padding: 0 1.5em;
+    font-size: initial;
+    height: 2rem;
+}
+
+.Todo-edit-form button {
+    padding: 0 1.3rem;
+    border: none;
+    background: #8ae4f2;
+    color: white;
+    font-weight: bold;
+    border: 1px soild rgba(255,255,255,0.2);
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease-out;
+    height: 2rem;
+}
+
+.Todo-edit-form button:hover{
+    background: #52cbde;
+}
+
 .Todo-buttons button{
     border: none;
     font-size: 1em;
